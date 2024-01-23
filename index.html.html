@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Is it fake news?</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Is it fake news?</h1>
-    <form action="#" method="POST">
-        <label for="news">Enter the news article:</label><br>
-        <textarea id="news" name="news" rows="5" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
-    </form>
-    <p>This project is based on a Deep Learning model that analyzed around 70,000 news articles, it is not a factchecker, rather it detects whether the news article is fake or not based on how they are written, i.e if they have a professional writing tone, almost all whatsapp forwards will be detected as fake.</p>
+    <div class="container">
+        <h1>Fake News Detector</h1>
+        <form onsubmit="predict(event)">
+            <label for="article">Enter the news article:</label><br>
+            <textarea id="article" name="article" rows="5" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="result"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
